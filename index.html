@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Emberfall: The Emberwild Saga. An unofficial, non-commercial fan project. A party-based fantasy RPG that runs offline in the browser.">
+  <meta name="color-scheme" content="dark">
+  <title>Emberfall: The Emberwild Saga</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="title" data-mode="">
+  <div id="app" class="app">
+
+    <!-- Title -->
+    <section id="title" class="screen" aria-label="Title">
+      <div class="embers" id="embers" aria-hidden="true"></div>
+      <div class="title-wrap">
+        <h1 class="logo">Emberfall</h1>
+        <p class="subtitle">The Emberwild Saga</p>
+        <nav class="menu" aria-label="Title menu">
+          <button id="btnContinue" class="btn primary big">Continue</button>
+          <button id="btnNew" class="btn big">New Game</button>
+          <button id="btnLoad" class="btn big">Load Game</button>
+          <button id="btnHow" class="btn big">How to Play</button>
+        </nav>
+        <p class="fine">An unofficial, non-commercial fan project. Not an endorsed tabletop or licensed computer-game product. Runs offline; saves stay in this browser.</p>
+      </div>
+    </section>
+
+    <!-- Chooser -->
+    <section id="campaign" class="screen" hidden aria-label="Choose an adventure">
+      <header class="screen-head">
+        <h2>Choose an Adventure</h2>
+        <div id="campTabs" class="tabs" role="tablist" aria-label="Campaign bands"></div>
+      </header>
+      <div class="chooser">
+        <div id="campCards" class="cards" role="listbox" aria-label="Adventures"></div>
+        <aside id="campDetail" class="detail" aria-live="polite"></aside>
+      </div>
+      <footer class="screen-foot">
+        <button id="campBack" class="btn">Back</button>
+        <button id="campBring" class="btn">Bring a saved company</button>
+        <button id="campAssemble" class="btn primary">Assemble the Company</button>
+      </footer>
+    </section>
+
+    <!-- Assembly -->
+    <section id="assembly" class="screen" hidden aria-label="Assemble your company">
+      <header class="screen-head">
+        <h2 id="asmHead">Assemble your company</h2>
+        <p id="asmGold" class="muted"></p>
+      </header>
+      <div class="asm-cols">
+        <div class="asm-col">
+          <h3>Waiting heroes</h3>
+          <div id="asmRoster" class="asm-list"></div>
+        </div>
+        <div class="asm-col">
+          <h3>The company</h3>
+          <div id="asmParty" class="asm-list"></div>
+        </div>
+      </div>
+      <footer class="screen-foot">
+        <button id="asmBack" class="btn">Back</button>
+        <button id="asmCreate" class="btn">Create a hero</button>
+        <button id="asmBegin" class="btn primary" disabled>Begin</button>
+      </footer>
+    </section>
+
+    <!-- In play -->
+    <section id="game" class="screen" hidden aria-label="Adventure">
+      <header id="hud" class="hud" aria-label="Status"></header>
+      <div id="stage" class="stage">
+        <div id="viewport" class="viewport">
+          <canvas id="view3d" aria-label="First-person view"></canvas>
+          <canvas id="overCanvas" hidden aria-label="Wilderness view"></canvas>
+          <canvas id="combatCanvas" hidden aria-label="Battle board"></canvas>
+        </div>
+        <aside id="side" class="side">
+          <div id="cmdbar" class="cmdbar" role="toolbar" aria-label="Commands"></div>
+          <div id="cmdhint" class="cmdhint" aria-live="polite"></div>
+          <div id="log" class="log" aria-live="polite" aria-label="Log"></div>
+          <canvas id="minimap" width="500" height="420" aria-label="Minimap (click for the full map)"></canvas>
+        </aside>
+      </div>
+      <div id="party" class="drawer" hidden aria-label="The company"></div>
+      <div id="navpad" class="navpad" hidden></div>
+    </section>
+
+    <div id="modals" class="modals"></div>
+    <div id="toast" class="toast" role="status"></div>
+  </div>
+
+  <!-- Scripts: classic, ordered. Each file owns one namespace. -->
+  <script src="js/rules.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/monsters.js"></script>
+  <script src="js/wilds.js"></script>
+  <script src="js/treasure.js"></script>
+  <script src="js/adventures.js"></script>
+  <script src="js/figures.js"></script>
+  <script src="js/view3d.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/combat.js"></script>
+  <script src="js/overland.js"></script>
+  <script src="js/campaign.js"></script>
+  <script src="js/journal.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/bestiary.js"></script>
+  <script src="js/navpad.js"></script>
+  <script src="js/watch.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
